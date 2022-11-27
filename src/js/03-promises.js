@@ -23,7 +23,7 @@ function onFormSubmit(evt) {
   let firstDelayValue = Number(firstDelayInptEl.value);
   let delayStepValue = Number(delayStepInptEl.value);
   let amountValue = Number(amountEl.value);
-  for (let i = 0; i <= amountValue; i += 1) {
+  for (let i = 0; i < amountValue; i += 1) {
     createPromise(i + 1, i * delayStepValue + firstDelayValue)
       .then(({ position, delay }) => {
         Notiflix.Notify.success(
