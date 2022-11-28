@@ -52,14 +52,20 @@ const timer = {
       const timerComponents = convertMs(counting);
       updateClockFace(timerComponents);
       if (counting <= 0) {
-        clearInterval(this.intervalID);
+        console.log(`Interval width id ${this.intervalID} has stopped!`);
+        stopInterval(this.intervalID);
       }
     }, 1000);
   },
 };
+function stopInterval(intervalID) {
+  clearInterval(intervalID);
+  console.log(`Interval width id ${intervalID} has stopped!`);
+  updateClockFace(00, 00, 00, 00);
+}
 function onStartBtnClick() {
   timer.onClose();
-  BtnEl.setAttribute('disabled', true);
+  btnEl.setAttribute('disabled', true);
 }
 function convertMs(ms) {
   // Number of milliseconds per unit of time
