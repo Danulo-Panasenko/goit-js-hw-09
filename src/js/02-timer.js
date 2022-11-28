@@ -43,9 +43,9 @@ const timer = {
       return;
     }
     this.isActive = true;
-    const currentDate = Date.now();
+    const curentDate = Date.now();
 
-    let counting = chosenTime - currentDate;
+    let counting = chosenTime - curentDate;
 
     this.intervalID = setInterval(() => {
       counting = counting -= 1000;
